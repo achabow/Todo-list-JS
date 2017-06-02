@@ -1,5 +1,4 @@
-window.onload = function ()
-{
+
    document.getElementById('add').addEventListener('click', function(){
       var value = document.getElementById('item').value; 
       if (value){
@@ -9,8 +8,12 @@ window.onload = function ()
       } 
        
    });
-    
+
+
 function addItemTodo(text){
+    var list = document.getElementById('todo');
+    
+    
     var item = document.createElement('li');
     item.innerText = text;
     
@@ -21,8 +24,13 @@ function addItemTodo(text){
     var remove = document.createElement('button');
     remove.classList.add('remove');
     
-    var add = document.createElement('button');
-    complete.classList.add('complete ');
+    var complete = document.createElement('button');
+    complete.classList.add('complete');
+    
+    buttons.appendChild(remove);
+    buttons.appendChild(complete);
+    item.appendChild(buttons);
+
+    list.appendChild(item);
     
     }
-}
